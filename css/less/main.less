@@ -65,30 +65,8 @@ hr {
     -o-transition: opacity 1000ms ease-in-out;
     transition: opacity 1000ms ease-in-out;
 }
-.surprising {
+.hid {
     opacity: 0;
-}
-/* Global Values */
- .desc {
-    padding-top: 50px;
-    p {
-        color: #2f2f2f;
-    }
-    t {
-        color: #34495e;
-        font-weight: 700;
-    }
-    imp {
-        padding: 6px;
-        color: white;
-        background: #34495e;
-    }
-    more {
-        color: #95a5a6;
-    }
-}
-sm {
-    font-size: 12px;
 }
 /*---------------------------------------------------
     3.1 Topbar
@@ -101,9 +79,9 @@ sm {
     z-index: 10000;
     overflow: visible;
     font: normal 16px/24px'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    a {
-        color: #fff;
-    }
+}
+#section-topbar a {
+    color: #fff;
 }
 #topbar-inner {
     background: #111;
@@ -116,44 +94,42 @@ sm {
 
     By default, top navigation bar uses "fixed" position
 */
- #section-topbar {
-    ul#nav {
-        display: inline-block;
-        position: relative;
-        margin: 0;
-        padding: 0;
-        /*border-right: 1px solid #222;*/
-        /* For IE, the outcast */
-        zoom:1;
-        *display: inline;
-        li {
-            display: block;
-            float: left;
-            padding: 0;
-        }
-        a {
-            display: block;
-            font: normal 11px/18px"Helvetica Neue", Helvetica, Arial, sans-serif;
-            text-decoration: none;
-            padding: 18px 20px 18px 20px;
-            /*border-left: 1px solid #222;*/
-            &:hover, &:focus {
-            background: #222;
-            text-decoration: none;
-            border-left: 1px solid #111;
-            }
-        }
-        .active a {
-            background: #44bbaa;
-            border-left: 1px solid #111;
-            &:hover {
-                background: #44bbaa;
-            }
-        }
-    }
-    i {
-        font-size: 25px;
-    }
+ #section-topbar ul#nav {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    /*border-right: 1px solid #222;*/
+    /* For IE, the outcast */
+    zoom:1;
+    *display: inline;
+}
+#section-topbar ul#nav > li {
+    display: block;
+    float: left;
+    padding: 0;
+}
+#section-topbar ul#nav a {
+    display: block;
+    font: normal 11px/18px"Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    padding: 18px 20px 18px 20px;
+    /*border-left: 1px solid #222;*/
+}
+#section-topbar ul#nav a:hover {
+    background: #222;
+    text-decoration: none;
+    border-left: 1px solid #111;
+}
+#section-topbar ul#nav .active a {
+    background: #44bbaa;
+    border-left: 1px solid #111;
+}
+#section-topbar ul#nav .active a:hover {
+    background: #44bbaa;
+}
+#section-topbar i {
+    font-size: 25px;
 }
 /*---------------------------------------------------
     SECTION WRAPS
@@ -179,75 +155,95 @@ sm {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    h1 {
-        font-size: 80px;
-        color: white;
-    }
-    h3 {
-        font-size: 20px;
-        color: white;
-    }
-    a {
-        color: white;
-        transition: color .3s linear;
-        -webkit-transition: color .3s linear;
-        -moz-transition: color .3s linear;
-    }
-    a:hover {
-        color: #2c3e50;
-    }
+}
+#headerwrap h1 {
+    font-size: 80px;
+    color: white;
+}
+#headerwrap h3 {
+    font-size: 20px;
+    color: white;
+}
+#headerwrap a {
+    color: white;
+    transition: color .3s linear;
+    -webkit-transition: color .3s linear;
+    -moz-transition: color .3s linear;
+}
+#headerwrap a:hover {
+    color: #2c3e50;
 }
 /* Intnro Wrap */
  #intro {
-    background: #34495E;
+    background: #2c3e50;
     padding-top: 60px;
     padding-bottom: 60px;
     color: white;
-    h5, p {
-        color: white;
-    }
-    i {
-        color: white;
-        font-size: 20px;
-        padding-right: 8px;
-        vertical-align: middle;
-    }
+}
+#intro h5, p {
+    color: white;
+}
+#intro i {
+    color: white;
+    font-size: 20px;
+    padding-right: 8px;
+    vertical-align: middle;
 }
 #skillswrap {
-    background: #34495E;
+    background: #2c3e50;
     padding-top: 60px;
     padding-bottom: 60px;
     color: white;
-    h5, p {
-        color: white;
-    }
 }
-#portfolio {
-    sm {
-        margin-right: 1.2rem;
-    }
+#skillswrap h5, p {
+    color: white;
 }
 #footwrap {
     background: #2f2f2f;
     padding-top: 50px;
     padding-bottom: 50px;
-    p, h5 {
-        color: white;
-    }
-    t {
-        font-weight: 700;
-    }
-    i {
-        padding-right: 8px;
-        color: #1abc9c;
-    }
+}
+#footwrap p {
+    color: white;
+}
+#footwrap h5 {
+    color: white;
+}
+#footwrap t {
+    font-weight: 700;
+}
+#footwrap i {
+    padding-right: 8px;
+    color: #1abc9c;
 }
 /* Copyright Wrap */
  #c {
     background: #222222;
     padding-top: 15px;
     text-align: right;
-    p {
-        color: white
-    }
+}
+#c p {
+    color: white
+}
+/* Global Values */
+ .desc {
+    padding-top: 50px;
+}
+.desc p {
+    color: #2f2f2f;
+}
+.desc t {
+    color: #34495e;
+    font-weight: 700;
+}
+.desc imp {
+    padding: 6px;
+    color: white;
+    background: #34495e;
+}
+.desc more {
+    color: #95a5a6;
+}
+sm {
+    font-size: 12px;
 }

@@ -1,110 +1,64 @@
+/*globals Chart, Modernizr*/
 'use strict';
+var mySkills;
 
-var AnimEnd = 'animationend webkitAnimationEnd mozAnimationEnd MSAnimationEnd oAnimationEnd';
-var nav = $('.nav');
-var navButton = $('.nav-el');
-var overlay = $('.overlay');
+var loadSkills = function() {
+    console.log('initSkills');
+    $.ajax({
+        type: 'GET',
+        url: 'js/mySkills.json',
+        dataType: 'json',
+        success: function(skills) {
+            mySkills = skills;
+        },
+        fail: function() {
+            console.log('Error loading JSON file');
+        }
+    });
+};
 
-$(navButton).click(function() {
-    /* Remove old previous classes */
+//Render skills charts
 
-    $(navButton).removeClass('inactive_reverse active_reverse');
-    $(overlay).removeClass('active active_reverse');
+function renderSkills(mySkills) {
+    //Make sure the AJAX request has been completed
+    if (mySkills) {
+        var anotherSkill;
 
-    /* Add classes on menu elements */
-    $(this).siblings().addClass('inactive');
-    $(this).addClass('active');
+        $('[data-stats]').each(function(index) {
+            var oneSkill = $(this).data('stats');
+            $(this).parent().removeClass('surprising');
+            anotherSkill = new Chart($(this)[0].getContext('2d')).Doughnut(mySkills[oneSkill]);
+        });
+        $('#skillswrap').off('inview');
 
-    /* Activate related overlay */
-    var oTarget = $(this).data('id');
-    $('#' + oTarget).addClass('active');
+    } else {
+        setTimeout(function() {
+            renderSkills(mySkills);
+            console.log('Another try');
+        }, 2000);
+    }
+}
 
-    /* Prevent scrolling */
-    $('body').addClass('noscroll');
+(function($) {
+    //Format emails at run time
+    jQuery.fn.mailto = function() {
+        return this.each(function() {
+            var emailAdd = $(this).attr('href').replace(/\s*\(.+\)\s*/, '@');
+            var emailText = $(this).html().replace(/\s*\(.+\)\s*/, '@');
+            $(this).before('<a href=\'mailto:' + emailAdd + '\' rel=\'nofollow\' title=\'Say hello!\'>' + emailText + '</a>').remove();
+        });
+    };
+    $(function() {
+        $('.email').mailto();
 
-});
+        //Load skills with AJAX
+        loadSkills();
 
-$('.close').click(function() {
+        // Bind the event to the charts rendering
+        $('#skillswrap').bind('inview', function() {
 
-    /* Remove old classes and add new ones on menu elements */
-    $('.active', nav).removeClass('active').addClass('active_reverse');
-    $('.inactive', nav).addClass('inactive_reverse');
-
-    /* Bring back our overlay to its default state */
-    $(this).parent().addClass('active_reverse');
-
-    /* Remove .noscroll and .inactive when reverse animation is finished */
-    $('.inactive_reverse').bind(AnimEnd, function() {
-        $('body').removeClass('noscroll');
-        $(navButton).removeClass('inactive');
-        $('.inactive_reverse').unbind(AnimEnd);
-        $(navButton).removeClass('inactive_reverse active_reverse');
+            renderSkills(mySkills);
+        });
     });
 
-});
-
-
-// var htmlData = [{
-//     value: 94,
-//     color: "#1abc9c"
-// }, {
-//     value: 6,
-//     color: "#ecf0f1"
-// }];
-
-// var cssData = [{
-//     value: 98,
-//     color: "#1abc9c"
-// }, {
-//     value: 2,
-//     color: "#ecf0f1"
-// }];
-
-// var jsData = [{
-//     value: 80,
-//     color: "#1abc9c"
-// }, {
-//     value: 20,
-//     color: "#ecf0f1"
-// }];
-
-// var uxData = [{
-//     value: 65,
-//     color: "#1abc9c"
-// }, {
-//     value: 35,
-//     color: "#ecf0f1"
-// }];
-
-// var psData = [{
-//     value: 85,
-//     color: "#1abc9c"
-// }, {
-//     value: 15,
-//     color: "#ecf0f1"
-// }];
-
-// var illData = [{
-//     value: 50,
-//     color: "#1abc9c"
-// }, {
-//     value: 50,
-//     color: "#ecf0f1"
-// }];
-
-// var cData = [{
-//     value: 70,
-//     color: "#1abc9c"
-// }, {
-//     value: 30,
-//     color: "#ecf0f1"
-// }];
-
-// var wpData = [{
-//     value: 60,
-//     color: "#1abc9c"
-// }, {
-//     value: 45,
-//     color: "#ecf0f1"
-// }];
-// var myDoughnut = new Chart($('.chart')[0].getContext("2d")).Doughnut($(this).attr('id') doughnutData);
+})(jQuery);
