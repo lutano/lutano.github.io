@@ -122,13 +122,20 @@ module.exports = function(grunt) {
                 }
             }
 
+        },
+        clean: {
+            options: {
+                force: true
+            },
+            js: ['<%= paths.dev %>js/main.js']
         }
+
 
     });
 
 
     //Default task
-    grunt.registerTask('default', ['jshint', 'less', 'concat', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'less', 'concat', 'uglify', 'clean']);
 
     // JS files task
     grunt.registerTask('js', ['jshint', 'concat', 'uglify']);
