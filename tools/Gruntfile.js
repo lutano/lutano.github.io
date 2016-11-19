@@ -135,7 +135,7 @@ module.exports = function(grunt) {
 
 
     //Default task
-    grunt.registerTask('default', ['jshint', 'less', 'concat', 'uglify', 'clean']);
+    grunt.registerTask('default', ['less', 'jshint', 'concat', 'uglify', 'clean']);
 
     // JS files task
     grunt.registerTask('js', ['jshint', 'concat', 'uglify']);
