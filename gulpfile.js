@@ -1,185 +1,70 @@
-'use strict';
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync'),
+    autoprefixer = require('gulp-autoprefixer'),
+    uglify = require('gulp-uglify'),
+    jshint = require('gulp-jshint'),
+    header  = require('gulp-header'),
+    rename = require('gulp-rename'),
+    cssnano = require('gulp-cssnano'),
+    sourcemaps = require('gulp-sourcemaps'),
+    package = require('./package.json');
 
-var browserSync = require('browser-sync');
-var del = require('del');
-var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')();
-var reworkNpm = require('rework-npm');
-var runSequence = require('run-sequence');  // Temporary solution until Gulp 4
-                                            // https://github.com/gulpjs/gulp/issues/355
 
-var pkg = require('./package.json');
-var dirs = pkg['h5bp-configs'].directories;
-var reload = browserSync.reload;
+var banner = [
+  '/*!\n' +
+  ' * <%= package.name %>\n' +
+  ' * <%= package.title %>\n' +
+  ' * <%= package.url %>\n' +
+  ' * @author <%= package.author %>\n' +
+  ' * @version <%= package.version %>\n' +
+  ' * Copyright ' + new Date().getFullYear() + '. <%= package.license %> licensed.\n' +
+  ' */',
+  '\n'
+].join('');
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+gulp.task('css', function () {
+    return gulp.src('src/scss/style.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer('last 4 version'))
+    .pipe(gulp.dest('app/assets/css'))
+    .pipe(cssnano())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(header(banner, { package : package }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('app/assets/css'))
+    .pipe(browserSync.reload({stream:true}));
+});
 
-var browserSyncOptions = {
+gulp.task('js',function(){
+  gulp.src('src/js/main.js')
+    .pipe(sourcemaps.init())
+    .pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter('default'))
+    .pipe(header(banner, { package : package }))
+    .pipe(gulp.dest('app/assets/js'))
+    .pipe(uglify())
+    .pipe(header(banner, { package : package }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('app/assets/js'))
+    .pipe(browserSync.reload({stream:true, once: true}));
+});
 
-    // In-depth information about the options:
-    // http://www.browsersync.io/docs/options/
-
-    logPrefix: 'H5BP',
-    notify: false,
-    port: 8080
-};
-
-var supportedBrowsers = [
-
-    // In-depth information about the options:
-    // https://github.com/postcss/autoprefixer#browsers
-
-    'last 2 versions',
-    'ie > 8',
-    '> 1%'
-];
-
-// ---------------------------------------------------------------------
-// | Helper tasks                                                      |
-// ---------------------------------------------------------------------
-
-gulp.task('clean:before', function (done) {
-    del([dirs.dist]).then(function () {
-        done();
+gulp.task('browser-sync', function() {
+    browserSync.init(null, {
+        server: {
+            baseDir: "app"
+        }
     });
 });
-
-gulp.task('clean:after', function (done) {
-    del([
-        dirs.dist + '/{css,css/**}',
-        dirs.dist + '/{img,/img/**}',
-        dirs.dist + '/{js,/js/**}'
-    ]).then(function () {
-        done();
-    });
+gulp.task('bs-reload', function () {
+    browserSync.reload();
 });
 
-gulp.task('copy', [
-    'copy:html',
-    'copy:misc'
-]);
-
-gulp.task('copy:html', function () {
-    return gulp.src(dirs.src + '/index.html')
-        .pipe(plugins.replace(/{{h5bp-version}}/g, pkg.version))
-        .pipe(plugins.useref())
-        .pipe(gulp.dest('dist'));
-});
-
-gulp.task('copy:misc', function () {
-    return gulp.src([
-
-        // Copy all files
-        dirs.src + '/**',
-
-        // Exclude the following files
-        // (other tasks will handle the copying of these files)
-        '!' + dirs.src + '/index.html',
-        '!' + dirs.src + '/{css,css/**}',
-        '!' + dirs.src + '/{js,/js/**}'
-
-    ], {
-
-        // Include hidden files by default
-        dot: true
-
-    }).pipe(gulp.dest(dirs.dist));
-});
-
-gulp.task('generate:main.css', function () {
-    return gulp.src(dirs.src + '/css/index.css')
-            .pipe(plugins.rework(reworkNpm()))
-            .pipe(plugins.autoprefixer({
-                browsers: supportedBrowsers
-            }))
-            .pipe(plugins.cssBase64())
-            .pipe(plugins.uncss({
-                html: [dirs.src + '/index.html']
-            }))
-            .pipe(plugins.csso())
-            .pipe(plugins.rename('main.css'))
-            .pipe(gulp.dest(dirs.src + '/css/'))
-            .pipe(reload({ stream: true }));
-});
-
-gulp.task('lint:js', function () {
-    return gulp.src([
-        'gulpfile.js',
-        dirs.src + '/js/**/*.js',
-    ]).pipe(plugins.jshint())
-      .pipe(plugins.jshint.reporter('jshint-stylish'))
-      .pipe(plugins.if(!browserSync.active, plugins.jshint.reporter('fail')));
-});
-
-gulp.task('minify:html', function () {
-
-    // In-depth information about the `htmlmin` options:
-    // https://github.com/kangax/html-minifier#options-quick-reference
-    var htmlminOptions = {
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        minifyJS: true,
-        removeAttributeQuotes: true,
-        removeComments: true,
-        removeEmptyAttributes: true,
-        removeOptionalTags: true,
-        removeRedundantAttributes: true
-    };
-
-    return gulp.src([
-        dirs.dist + '/index.html'
-    ]).pipe(plugins.smoosher())
-      .pipe(plugins.htmlmin(htmlminOptions))
-      .pipe(gulp.dest(dirs.dist));
-
-});
-
-gulp.task('zopfli', function() {
-    gulp.src(dirs.dist + '/**/*.{css,html,ico,js,svg,txt,xml}')
-        .pipe(plugins.zopfli())
-        .pipe(gulp.dest(dirs.dist));
-});
-
-// ---------------------------------------------------------------------
-// | Main tasks                                                        |
-// ---------------------------------------------------------------------
-
-gulp.task('build', function (done) {
-    runSequence(
-        ['clean:before', 'lint:js'],
-        'generate:main.css',
-        'copy',
-        'minify:html',
-        'clean:after',
-        'zopfli',
-    done);
-});
-
-gulp.task('default', ['build']);
-
-gulp.task('serve', ['generate:main.css'], function () {
-
-    browserSyncOptions.server = dirs.src;
-    browserSync(browserSyncOptions);
-
-    gulp.watch([
-        dirs.src + '/**/*.html'
-    ], reload);
-
-    gulp.watch([
-        dirs.src + '/css/**/*.css',
-        dirs.src + '/img/**/*',
-        '!' + dirs.src + '/css/main.css'
-    ], ['generate:main.css']);
-
-    gulp.watch([
-        dirs.src + '/js/**/*.js',
-        'gulpfile.js'
-    ], ['lint:js', reload]);
-
-});
-
-gulp.task('serve:build', ['build'], function () {
-    browserSyncOptions.server = dirs.dist;
-    browserSync(browserSyncOptions);
+gulp.task('default', ['css', 'js', 'browser-sync'], function () {
+    gulp.watch("src/scss/*/*.scss", ['css']);
+    gulp.watch("src/js/*.js", ['js']);
+    gulp.watch("app/*.html", ['bs-reload']);
 });

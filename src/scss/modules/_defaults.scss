@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font: 300 17px/1.4 'Open Sans', Helvetica, Arial, sans-serif;
+  color: #fff;
+  background-color: rgba(242, 242, 242, .45);
+  transition: all .4s .3s ease-in;
+}
+body,html{
+	min-height: 100vh;
+	// overflow: hidden;
+}
