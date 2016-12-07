@@ -11,7 +11,7 @@
   'use strict';
 
   $(function () {
-    alert("Hello world");
+
   });
 
 })(jQuery, window, document);
