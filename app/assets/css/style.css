@@ -17,12 +17,15 @@ html {
 
 body {
   font: 300 17px/1.4 'Open Sans', Helvetica, Arial, sans-serif;
-  color: #fff;
+  color: rgba(0, 0, 0, 0.6);
   background-color: rgba(242, 242, 242, 0.45);
   transition: all .4s .3s ease-in; }
 
 body, html {
   min-height: 100vh; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #4a4a4a; }
 
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -399,12 +402,7 @@ textarea {
 .nav ul {
   list-style: none; }
 
-.container {
-  margin: 0 auto;
-  max-width: 760px;
-  padding: 0 10px; }
-
-.aside {
+.sidebar {
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -412,33 +410,98 @@ textarea {
   height: 100%;
   padding: 5em 2em;
   font-size: 1.125em;
-  color: rgba(0, 0, 0, 0.6);
   text-align: left; }
 
-.window-glass {
+.container {
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 0 10px; }
+
+.headline {
+  text-transform: uppercase;
+  line-height: 4rem; }
+
+.main {
   position: static;
   margin-left: 40%;
   width: 60%; }
 
-.glass-section {
+.section {
   box-sizing: border-box;
   height: auto;
-  padding: 4rem; }
+  padding: 4rem;
+  font-weight: lighter; }
+  .section img {
+    margin: 4rem auto;
+    display: block;
+    width: 100%; }
+  .section p, .section h5, .section h6 {
+    font-weight: lighter; }
+  .section p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem; }
+  .section h6 {
+    margin-bottom: .6rem;
+    color: white;
+    font-size: 1.4rem; }
+  .section .title {
+    margin: 0;
+    font-size: 1.7rem; }
+  .section hr {
+    height: 5px;
+    border: 0 none;
+    background-color: rgba(255, 255, 255, 0.6); }
+  .section li {
+    font-size: 1.4rem; }
 
-.glass-section--one {
-  background-color: #5EB3EF; }
-
-.glass-section--two {
-  background-color: #EA483E; }
-
-.glass-section--two {
-  background-color: #EA483E; }
-
-.glass-footer {
-  font-size: 0.875em;
-  padding: 2em;
-  background-color: black;
+.work-showcase .title {
   color: white; }
+
+.experience {
+  background-color: #eac827; }
+  .experience p {
+    opacity: .8;
+    font-size: 1.4rem; }
+
+.education {
+  background-color: #9ebecd; }
+
+.section-skinned {
+  color: #fff; }
+
+.section.section-skinned:nth-child(1) {
+  background-color: rgba(94, 179, 239, 0.8); }
+
+.section.section-skinned:nth-child(2) {
+  background-color: rgba(234, 72, 62, 0.8); }
+
+.section.section-skinned:nth-child(3) {
+  background-color: rgba(245, 124, 0, 0.8); }
+
+.section.section-skinned:nth-child(4) {
+  background-color: rgba(76, 175, 80, 0.8); }
+
+.item {
+  margin-bottom: 4rem; }
+
+.footer {
+  font-size: 0.875em;
+  padding: 1.2rem 4rem;
+  background-color: rgba(50, 50, 50, 0.9); }
+  .footer p {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.9); }
+
+.call-to-action {
+  display: inline-block;
+  padding: 1.8rem 2.4rem;
+  margin-top: 2rem;
+  background: rgba(54, 139, 199, 0.8);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase; }
 
 @font-face {
   font-family: 'Font-Name';
@@ -466,6 +529,9 @@ textarea {
   background: #333;
   color: #fff;
   text-shadow: none; }
+
+.link {
+  color: #3b80fe; }
 
 @media print {
   * {

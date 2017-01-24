@@ -4,7 +4,7 @@
  * https://lutano.github.io
  * @author Luciano Spilotros
  * @version 1.2.1
- * Copyright 2016. MIT licensed.
+ * Copyright 2017. MIT licensed.
  */
 (function ($, window, document, undefined) {
 
