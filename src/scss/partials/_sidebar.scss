@@ -1,13 +1,4 @@
 .sidebar {
-
-}
-.container {
-    margin: 0 auto;
-    max-width: 760px;
-    padding: 0 10px;
-}
-
-.aside {
     box-sizing: border-box;
     position: fixed;
     top:0;
@@ -16,6 +7,16 @@
 
     padding: 5em 2em;
     font-size: 1.125em;
-    color: rgba(0, 0, 0, .6);
     text-align: left;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 0 10px;
+}
+
+.headline {
+    text-transform: uppercase;
+    line-height: 4rem;
 }

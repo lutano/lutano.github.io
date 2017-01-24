@@ -38,7 +38,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('js',function(){
-  gulp.src('src/js/main.js')
+  gulp.src('src/js/scripts.js')
     .pipe(sourcemaps.init())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
