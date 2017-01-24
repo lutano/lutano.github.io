@@ -14,42 +14,113 @@
         <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta name="msapplication-TileImage" content="mstile-144x144.png" />
 
+        <link href="//www.google-analytics.com" rel="dns-prefetch">
+        <link href="//ajax.googleapis.com" rel="dns-prefetch">
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700">
         <link rel="stylesheet" href="assets/css/style.min.css">
 
+        <script src="assets/components/modernizr/modernizr.js"></script>
+
     </head>
     <body>
-      <div class="aside">
-        <h1>
-          <strong>Developer,
-            Designer &amp; Cyclist.</strong>
+      <div class="sidebar">
+        <h1 class="headline">
+          Designer,<br>
+          Developer &amp; <br>
+          Curious.
         </h1>
         <p>
-          Luciano Spilotros is Sr. FrontEnd Developer and UI/UX Designer at <a href="http://www.wooga.com" target="_blank">Wooga</a>.
+          Luciano Spilotros is Sr. FrontEnd Developer and UI/UX Designer at <a href="http://www.wooga.com" target="_blank" class="link">Wooga</a>.
         </p>
         <p>Luciano has 8+ years of experience in the online technology space with an expertise in User Research &amp; Experience and FrontEnd development.</p>
+        <a href="mailto:luciano.spilotros@gmail.com" class="call-to-action button">say hello!</a>
       </div>
 
-      <div class="window-glass">
-        <div class="glass-section glass-section--one">
-          <img src="http://lorempixel.com/g/600/300/" alt="Portfolio Item">
-        </div>
-        <!-- /.section -->
-        <div class="glass-section glass-section--two">
+      <div class="main">
+        <div class="section work-showcase section-skinned">
+          <p class="number">
+            .01
+          </p>
           <img src="http://lorempixel.com/g/600/350/" alt="Portfolio Item">
+          <h6 class="type">
+            Wooga - User Research &amp; FrontEnd
+          </h6>
+          <h4 class="title">Error Avalytics 3.0</h4>
         </div>
-        <!-- /.section -->
-        <div class="glass-footer" role="contentinfo">
-          <h3>I am the <em>footer</em></h3>
+        <div class="section work-showcase section-skinned">
+          <p class="number">
+            .02
+          </p>
+          <img src="http://lorempixel.com/g/600/350/" alt="Portfolio Item">
+          <h6 class="type">
+            Wooga - UX
+          </h6>
+          <h4 class="title">
+            Wooga's Games Portal
+          </h4>
+        </div>
+        <div class="section experience">
+          <hr>
+          <h2 class="headline">
+            WORK Experience
+          </h2>
+          <div class="work-item item">
+            <p class="numer">August 2014 - Present | <a class="link" target="_blank" title="Wooga Homepage" href="http://www.wooga.com">Wooga</a></p>
+            <h5 class="title">UX Designer &amp; Product Owner</h5>
+          </div>
+          <div class="work-item item">
+            <p class="number">July 2012 - June 2014 | <a class="link" target="_blank" title="AS&amp;K Homepage" href="http://digital.asandk.com/">AS&amp;K Communication</a></p>
+            <h5 class="title">Senior FrontEnd Developer</h5>
+          </div>
+          <div class="work-item item">
+            <p class="number">August 2010 - 2012 | <a class="link" target="_blank" title="StreamUK Homepage" href="https://www.streamamg.com/">StreamUK</a></p>
+            <h5 class="title">FrontEnd Developer and 3Tier Support</h5>
+          </div>
+        </div>
+        <div class="section education">
+          <hr>
+          <h2 class="headline">
+            Education
+          </h2>
+          <div class="education-item item">
+            <p class="number">2008 - 2010 | Aalborg University Copenhagen (Denmark)</p>
+            <h5 class="title">Medialogy - <em>Master of Science</em></h5>
+            <ul>
+              <li>Human-Computer Interaction</li>
+              <li>Sensor Technology</li>
+              <li>Interaction Design </li>
+              <li>Media Technology</li>
+              <li>Computer Graphics</li>
+            </ul>
+          </div>
+          <div class="education-item item">
+            <p class="number">2004 - 2008 | Universita' degli Studi di Bari (Italy)</p>
+            <h5 class="title">Computer Science and Digital Communication - <em>Bachelor of Science</em></h5>
+            <ul>
+              <li>Multimedia Design </li>
+              <li>Databases</li>
+              <li>Networking</li>
+              <li>Programming Languages</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer" role="contentinfo">
+          <p>2017 &copy; Made with Luciano Spilotros</p>
         </div>
       </div>
 
+      <script src="assets/components/jquery/jquery.min.js"></script>
+      <script src="assets/js/scripts.min.js"></script>
 
-        <!-- smoosh -->
-        <!-- build:js js/main.js -->
-        <script src="assets/js/main.min.js"></script>
-        <!-- endbuild -->
-        <!-- endsmoosh -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X');ga('send','pageview');
+      </script>
 
     </body>
 </html>
