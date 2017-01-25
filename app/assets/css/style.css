@@ -458,6 +458,7 @@ textarea {
   .work-showcase .item__title, .work-showcase .item__subtitle, .work-showcase .item__extra {
     color: white; }
   .work-showcase .item__subtitle {
+    margin-top: 4rem;
     font-weight: lighter; }
   .work-showcase:nth-child(2) {
     background-color: rgba(234, 72, 62, 0.8); }
@@ -471,6 +472,7 @@ textarea {
     font-size: 1.4rem; }
 
 .education {
+  padding-bottom: 6rem;
   background-color: #9ebecd; }
   .education li {
     float: left;
