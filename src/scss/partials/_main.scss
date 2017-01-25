@@ -1,7 +1,5 @@
 .main {
-  position: static;
-  margin-left: 40%;
-  width: 60%;
+  margin-left: 0;
 }
 
 .item__extra {
@@ -23,12 +21,12 @@
 .section {
   box-sizing: border-box;
   height: auto;
-  padding: 4rem;
+  padding: 6rem;
 
   font-weight: lighter;
 
   hr {
-    height: 5px;
+    height: 12px;
     border: 0 none;
     background-color: rgba(255,255,255, .6);
   }
@@ -65,8 +63,19 @@
 .experience {
   background-color: rgba(234, 200, 39, 1.0);
   .item__subtitle {
+    // margin-bottom: 0;
     opacity: .8;
     font-size: 1.4rem;
+  }
+  .tasks {
+    margin: 0;
+  }
+  .item__desc {
+    margin: 2.6rem 0 0;
+    font-style: italic;
+  }
+  .tasks, .item__desc {
+    font-size: 1.5rem;
   }
 }
 
@@ -82,18 +91,14 @@
 
 }
 
-.section-skinned {
-  color: #fff;
-}
-
-.section.section-skinned:nth-child(3) {
-  background-color: rgba(245, 124, 0, 0.8);
-}
-
-.section.section-skinned:nth-child(4) {
-  background-color: rgba(76,175,80, 0.8);
+.education, .experience {
+  padding: 4rem 6rem;
 }
 
 .item {
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
+  &:last-child {
+    margin-bottom: 2rem;
+
+  }
 }
