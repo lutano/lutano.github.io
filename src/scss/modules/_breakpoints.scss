@@ -8,7 +8,18 @@
 
 }
 @media only screen and (min-width:1024px) {
+  .main {
+    position: static;
+    margin-left: 40%;
+    width: 60%;
+  }
 
+  .sidebar {
+    position: fixed;
+    top:0;
+    width: 40%;
+    height: 100%;
+  }
 }
 @media only screen and (min-width:1140px) {
 
