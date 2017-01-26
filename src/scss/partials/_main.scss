@@ -41,6 +41,21 @@
     width: 100%;
   }
 
+  .item__img-link {
+    display: block;
+    img {
+      transition: all 300ms ease;
+    }
+
+    &:hover {
+      background: url(/assets/img/social/behance.svg) center center no-repeat ;
+
+      img {
+        opacity: 0.15;
+      }
+    }
+  }
+
   .item__title, .item__subtitle, .item__extra {
     color: rgba(255, 255, 255, 1.0);
   }

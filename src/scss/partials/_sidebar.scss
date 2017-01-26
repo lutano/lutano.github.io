@@ -4,6 +4,16 @@
     padding: 3.5em 2em;
     font-size: 1.125em;
     text-align: left;
+
+    .anim__from-left {
+        -webkit-animation: from-the-left 1100ms linear both;
+        animation: from-the-left 1100ms linear both;
+    }
+
+    .anim__from-bottom   {
+        -webkit-animation:  from-the-bottom 2000ms linear both;
+        animation:  from-the-bottom 2000ms linear both;
+    }
 }
 
 .container {
@@ -13,6 +23,7 @@
 }
 
 .headline {
+
     text-transform: uppercase;
     line-height: 4.6rem;
     margin-bottom: 7rem;
