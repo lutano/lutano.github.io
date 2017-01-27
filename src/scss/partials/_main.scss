@@ -48,6 +48,7 @@
   .item__img-link {
     display: block;
     transition: all 300ms ease;
+    overflow: hidden;
     img {
       transition: all 300ms ease;
     }
@@ -60,6 +61,7 @@
       }
     }
   }
+
 
   .item__title, .item__subtitle, .item__extra {
     color: rgba(255, 255, 255, 1.0);
@@ -86,7 +88,6 @@
   &:nth-child(5) {
     background-color: rgba(41, 198, 205, .8);
   }
-
 }
 
 .experience {

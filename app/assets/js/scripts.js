@@ -3,7 +3,7 @@
  * Portfolio of Luciano Spilotros
  * https://lutano.github.io
  * @author Luciano Spilotros
- * @version 1.2.1
+ * @version 2.0.0
  * Copyright 2017. MIT licensed.
  */
 (function ($, window, document, undefined) {
