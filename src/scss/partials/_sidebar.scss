@@ -25,11 +25,14 @@
 .headline {
 
     text-transform: uppercase;
-    line-height: 4.6rem;
+    line-height: 4.7rem;
     margin-bottom: 7rem;
     .highlight {
         color: rgba(255, 255, 255, 1.0);
         background-color: rgba(74, 74, 74, 1.0);
+
+        -webkit-animation: hue 180s infinite;
+          animation: hue 180s infinite;
     }
 }
 
