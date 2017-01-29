@@ -819,6 +819,25 @@ textarea {
   87, 5% {
     background-color: #9ebecd; } }
 
+@media only screen and (max-width: 768px) {
+  .call-to-action {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    text-align: center; } }
+
+@media only screen and (max-width: 1024px) {
+  .section {
+    padding: 6rem 2rem; }
+  .sidebar {
+    padding: 1rem 1.6rem; }
+    .sidebar .social {
+      margin: 2.6rem 1rem 2.6rem 2rem; }
+  .actions {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; } }
+
 @media only screen and (min-width: 1024px) {
   .main {
     position: static;
