@@ -425,9 +425,7 @@ textarea {
   margin-bottom: 7rem; }
   .headline .highlight {
     color: white;
-    background-color: #4a4a4a;
-    -webkit-animation: hue 480s infinite;
-    animation: hue 480s infinite; }
+    background-color: #4a4a4a; }
 
 .main {
   margin-left: 0; }
