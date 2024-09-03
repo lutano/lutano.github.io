@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font: 300 17px/1.4 'Montserrat', Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, .6);
+  background-color: rgba(242, 242, 242, .45);
+  transition: all .4s .3s ease-in;
+}
+body,html{
+	min-height: 100vh;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: #4a4a4a
+}
