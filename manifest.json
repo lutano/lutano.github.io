@@ -1,0 +1,43 @@
+{
+  "name": "Luciano",
+  "short_name": "Luci",
+  "icons": [
+    {
+      "src": "/logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-120x120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#F0C330",
+  "background_color": "#F0C330",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "prefer_related_applications": false,
+  "related_applications": [
+  ]
+}
