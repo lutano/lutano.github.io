@@ -1,7 +1,8 @@
 .main {
   margin-left: 0;
-  p, li {
-    color: rgba(0,0,0,0.75);
+  p,
+  li {
+    color: rgba(0, 0, 0, 0.75);
   }
 }
 
@@ -12,7 +13,7 @@
 }
 
 .item__subtitle {
-  margin-bottom: .6rem;
+  margin-bottom: 0.6rem;
   font-size: 1.4rem;
 }
 
@@ -41,7 +42,7 @@
   hr {
     height: 12px;
     border: 0 none;
-    background-color: rgba(255,255,255, .6);
+    background-color: rgba(255, 255, 255, 0.6);
   }
 }
 
@@ -63,7 +64,7 @@
     }
 
     &:hover {
-      background: url(/img/social/behance.svg) center center no-repeat ;
+      background: url(/images/social/behance.svg) center center no-repeat;
 
       img {
         opacity: 0.15;
@@ -71,9 +72,10 @@
     }
   }
 
-
-  .item__title, .item__subtitle, .item__extra {
-    color: rgba(255, 255, 255, 1.0);
+  .item__title,
+  .item__subtitle,
+  .item__extra {
+    color: rgba(255, 255, 255, 1);
   }
 
   .item__subtitle {
@@ -86,22 +88,22 @@
   }
 
   &__booth {
-    background-color: rgba(155, 187, 134, .8);
+    background-color: rgba(155, 187, 134, 0.8);
   }
 
   &__edetailers {
-    background-color: rgba(97, 110, 239, .7);
+    background-color: rgba(97, 110, 239, 0.7);
   }
 
   &__book {
-    background-color: rgba(41, 198, 205, .8);
+    background-color: rgba(41, 198, 205, 0.8);
   }
 }
 
 .experience {
-  background-color: rgba(234, 200, 39, 1.0);
+  background-color: rgba(234, 200, 39, 1);
   .item__subtitle {
-    opacity: .8;
+    opacity: 0.8;
     font-size: 1.4rem;
   }
   .tasks {
@@ -112,7 +114,7 @@
 
 .education {
   padding-bottom: 6rem;
-  background-color: rgba(158, 190, 205, .5);
+  background-color: rgba(158, 190, 205, 0.5);
 
   li {
     float: left;
@@ -121,7 +123,8 @@
   }
 }
 
-.education, .experience {
+.education,
+.experience {
   padding: 4rem 6rem;
 }
 

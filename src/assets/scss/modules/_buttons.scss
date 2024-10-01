@@ -12,9 +12,8 @@
 
   &:hover {
     background-color: #1660e7;
-    box-shadow: 0 16px 32px -6px rgba(0, 0, 0, .2)
+    box-shadow: 0 16px 32px -6px rgba(0, 0, 0, 0.2);
   }
-
 }
 
 .actions {
@@ -33,7 +32,7 @@
   width: 30px;
   height: 30px;
   background-size: cover;
-  opacity: .66;
+  opacity: 0.66;
 
   &:hover {
     opacity: 1;
@@ -41,25 +40,25 @@
 }
 
 .github {
-  background-image: url(/img/social/github.svg);
+  background-image: url(/images/social/github.svg);
   -webkit-transform: scale(1.1); /* Chrome, Opera 15+, Safari 3.1+ */
   -ms-transform: scale(1.1); /* IE 9 */
   transform: scale(1.1);
 }
 
 .behance {
-  background-image: url(/img/social/behance.svg);
+  background-image: url(/images/social/behance.svg);
   -webkit-transform: scale(1.2); /* Chrome, Opera 15+, Safari 3.1+ */
   -ms-transform: scale(1.2); /* IE 9 */
   transform: scale(1.2);
 }
 
 .linkedin {
-  background-image: url(/img/social/linkedin.svg);
+  background-image: url(/images/social/linkedin.svg);
 }
 
 .x {
-  background-image: url(/img/social/x-logo.svg);
+  background-image: url(/images/social/x-logo.svg);
   -webkit-transform: scale(0.9); /* Chrome, Opera 15+, Safari 3.1+ */
   -ms-transform: scale(0.9); /* IE 9 */
   transform: scale(0.9);
