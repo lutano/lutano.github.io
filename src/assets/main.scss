@@ -1,15 +1,8 @@
 //----------------------------------*\
-// SCSS MIXINS
-//----------------------------------*/
-
-@import './scss/mixins/position';
-
-//----------------------------------*\
 // CONFIG MODULES
 //----------------------------------*/
 
 // Config modules
-@import './scss/modules/vars';
 @import './scss/modules/clearfix';
 @import './scss/modules/defaults';
 @import './scss/modules/normalize';
@@ -20,7 +13,6 @@
 
 @import './scss/modules/buttons';
 @import './scss/modules/inputs';
-@import './scss/modules/misc';
 @import './scss/modules/animations';
 
 // Enhancement modules
@@ -90,7 +82,7 @@ section {
 }
 
 .link {
-  color: $color-link;
+  color: theme('colors.link');
   text-decoration: none;
   text-decoration: underline;
 }
@@ -98,7 +90,7 @@ section {
 .animated-link {
   position: relative;
   text-decoration: underline;
-  color: $color-link;
+  color: theme('colors.link');
   transition: color 0.3s ease;
 
   &::after {
@@ -127,4 +119,20 @@ section {
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); // Accessibility focus style
   }
+}
+
+::selection {
+  background: #333;
+  color: #fff;
+  text-shadow: none;
+}
+::-moz-selection {
+  background: #333;
+  color: #fff;
+  text-shadow: none;
+}
+::-webkit-selection {
+  background: #333;
+  color: #fff;
+  text-shadow: none;
 }

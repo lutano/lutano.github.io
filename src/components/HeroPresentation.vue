@@ -69,6 +69,70 @@ const socialLinks = [
 </template>
 
 <style scoped lang="scss">
+.call-to-action {
+  display: inline-block;
+  padding: 1.8rem 2.4rem;
+
+  background: theme('colors.button');
+  color: rgba(255, 255, 255, 1);
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: theme('colors.buttonHover');
+    box-shadow: 0 16px 32px -6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+
+  > a {
+    transition: all 300ms ease;
+  }
+}
+
+.social {
+  margin-left: 1.8rem;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  opacity: 0.66;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.github {
+  background-image: url(/images/social/github.svg);
+  -webkit-transform: scale(1.1); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: scale(1.1); /* IE 9 */
+  transform: scale(1.1);
+}
+
+.behance {
+  background-image: url(/images/social/behance.svg);
+  -webkit-transform: scale(1.2); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: scale(1.2); /* IE 9 */
+  transform: scale(1.2);
+}
+
+.linkedin {
+  background-image: url(/images/social/linkedin.svg);
+}
+
+.x {
+  background-image: url(/images/social/x-logo.svg);
+  -webkit-transform: scale(0.9); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: scale(0.9); /* IE 9 */
+  transform: scale(0.9);
+}
+
 header {
   box-sizing: border-box;
 
