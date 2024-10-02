@@ -13,14 +13,6 @@
 @import './scss/modules/clearfix';
 @import './scss/modules/defaults';
 @import './scss/modules/normalize';
-//----------------------------------*\
-// PARTIALS
-//----------------------------------*/
-
-@import './scss/partials/header';
-@import './scss/partials/nav';
-@import './scss/partials/sidebar';
-@import './scss/partials/main';
 
 //----------------------------------*\
 // OBJECTS & MODULES
@@ -29,7 +21,6 @@
 @import './scss/modules/buttons';
 @import './scss/modules/inputs';
 @import './scss/modules/misc';
-@import './scss/modules/app';
 @import './scss/modules/animations';
 
 // Enhancement modules
@@ -38,4 +29,102 @@
 
 // @tailwind base;
 // @tailwind components;
-// @tailwind utilities;
+@tailwind utilities;
+
+main {
+  p,
+  li {
+    color: rgba(0, 0, 0, 0.75);
+  }
+}
+h1,
+h2 {
+  text-transform: uppercase;
+  line-height: 4.7rem;
+  margin-bottom: 7rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+
+.item__extra {
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.item__subtitle {
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+}
+
+.item__title {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.item__desc {
+  margin: 1.4rem 0 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+section {
+  box-sizing: border-box;
+  height: auto;
+  padding: 6rem;
+
+  font-weight: lighter;
+  hr {
+    height: 12px;
+    border: 0 none;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.item {
+  margin-bottom: 8rem;
+  &:last-child {
+    margin-bottom: 2rem;
+  }
+}
+
+.link {
+  color: $color-link;
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+.animated-link {
+  position: relative;
+  text-decoration: underline;
+  color: $color-link;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: #0056b3;
+    text-decoration: none;
+    &::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); // Accessibility focus style
+  }
+}

@@ -5,36 +5,46 @@ import IconVue from '@/components/icons/IconVue.vue'
 </script>
 
 <template>
-  <div id="footer" class="footer" role="contentinfo">
-    <ul class="flex justify-center gap-2 p-0">
+  <footer class="py-8 px-5" role="contentinfo">
+    <ul class="flex justify-center gap-2 p-0 m-0 mb-2">
       <li>
-        <a href="https://vitejs.dev/" title="Visit Vite homepage">
+        <a
+          href="https://vitejs.dev/"
+          target="_blank"
+          aria-label="Visit Vite homepage"
+          rel="noopener noreferrer"
+        >
           <IconVite class="dev-logo" />
         </a>
       </li>
       <li>
         <a
           href="https://www.typescriptlang.org/"
-          title="Visit Typescript page"
+          aria-label="Visit Typescript page"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <IconTypescript class="dev-logo" />
         </a>
       </li>
       <li>
-        <a href="https://vuejs.org/" title="Visit Vue page" target="_blank">
+        <a
+          href="https://vuejs.org/"
+          aria-label="Visit Vue page"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <IconVue class="dev-logo" />
         </a>
       </li>
     </ul>
-    <p>{{ new Date().getFullYear() }} &copy; Luciano Spilotros</p>
-  </div>
+    <p class="m-0">{{ new Date().getFullYear() }} &copy; Luciano Spilotros</p>
+  </footer>
 </template>
 
 <style scoped lang="scss">
-.footer {
+footer {
   font-size: 0.875em;
-  padding: 1.2rem 4rem;
   background-color: rgba(50, 50, 50, 0.9);
 
   ul {

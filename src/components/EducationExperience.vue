@@ -37,9 +37,9 @@ const educationExperience = [
 </script>
 
 <template>
-  <div class="section education">
+  <section>
     <hr />
-    <h2 class="headline">Education.</h2>
+    <h2>Education.</h2>
     <div
       v-for="education in educationExperience"
       :key="education.title"
@@ -48,10 +48,11 @@ const educationExperience = [
       <p class="item__subtitle">
         {{ education.dates }} |
         <a
-          class="link"
-          target="_blank"
-          :title="`${education.name} Homepage`"
+          class="animated-link"
           :href="education.link"
+          :aria-label="`Visit ${education.name} Homepage`"
+          target="_blank"
+          rel="noopener noreferrer"
           >{{ education.name }}</a
         >
         ( {{ education.location }} )
@@ -67,9 +68,18 @@ const educationExperience = [
       </ul>
       <div class="clear"></div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss">
-// Component styles go here
+section {
+  padding: 4rem 6rem;
+  background-color: rgba(158, 190, 205, 0.5);
+
+  li {
+    float: left;
+    min-width: 28rem;
+    font-size: 1.4rem;
+  }
+}
 </style>

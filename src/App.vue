@@ -1,27 +1,29 @@
 <script lang="ts">
-import FooterApp from '@/components/FooterApp.vue'
+import TechStackFooter from '@/components/TechStackFooter.vue'
 import HeroPresentation from '@/components/HeroPresentation.vue'
 import WorkExperience from '@/components/WorkExperience.vue'
 import EducationExperience from '@/components/EducationExperience.vue'
-
+import ProjectsShowcase from '@/components/ProjectsShowcase.vue'
 export default {
   name: 'App',
   components: {
     HeroPresentation,
     WorkExperience,
     EducationExperience,
-    FooterApp,
+    ProjectsShowcase,
+    TechStackFooter,
   },
 }
 </script>
 
 <template>
   <HeroPresentation />
-  <div class="main">
+  <main>
+    <ProjectsShowcase />
     <WorkExperience />
     <EducationExperience />
-    <FooterApp />
-  </div>
+  </main>
+  <TechStackFooter />
 </template>
 
 <style scoped></style>
