@@ -65,7 +65,10 @@ const socialLinks = [
           class="mb-0 inline-block"
         >
           <a
-            :class="[link.class, 'social']"
+            :class="[
+              link.class,
+              'social transition-transform duration-300 hover:scale-125',
+            ]"
             :href="link.url"
             :aria-label="`Visit my profile on ${link.name}`"
             target="_blank"
@@ -77,16 +80,6 @@ const socialLinks = [
 </template>
 
 <style scoped>
-.actions {
-  display: flex;
-  align-items: center;
-  margin-top: 4rem;
-
-  > a {
-    transition: all 300ms ease;
-  }
-}
-
 .social {
   display: inline-block;
   opacity: 0.66;
@@ -100,27 +93,23 @@ const socialLinks = [
 }
 
 .github {
-  -webkit-transform: scale(1.1); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: scale(1.1); /* IE 9 */
-  transform: scale(1.1);
+  position: relative;
+  top: 2px;
+  scale: 1.2;
   background-image: url(/images/social/github.svg);
 }
 
 .behance {
-  -webkit-transform: scale(1.2); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: scale(1.2); /* IE 9 */
-  transform: scale(1.2);
+  scale: 1.3;
   background-image: url(/images/social/behance.svg);
 }
 
 .linkedin {
+  scale: 1.15;
   background-image: url(/images/social/linkedin.svg);
 }
 
 .x {
-  -webkit-transform: scale(0.9); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: scale(0.9); /* IE 9 */
-  transform: scale(0.9);
   background-image: url(/images/social/x-logo.svg);
 }
 
@@ -141,7 +130,7 @@ header {
   animation: from-the-bottom 2000ms linear both;
 }
 
-h1 span {
+span {
   animation: hue 15s infinite;
   background-color: rgba(74, 74, 74, 1);
   color: rgba(255, 255, 255, 1);

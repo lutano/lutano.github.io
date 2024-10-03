@@ -4,11 +4,6 @@
   }
   header {
     padding: 1rem 1.6rem;
-    .social {
-    }
-  }
-  .actions {
-    flex-wrap: wrap;
   }
 }
 @media only screen and (min-width: 1024px) {
