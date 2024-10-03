@@ -68,8 +68,7 @@ main {
   }
 }
 h1 {
-  font-size: 3.6rem;
-  line-height: 4.4rem;
+  @apply md:text-[3.6rem] text-[2.4rem] md:leading-[4.4rem] leading-[3rem];
 }
 h2 {
   margin: 1rem 0 4rem;
@@ -78,11 +77,10 @@ h2 {
   line-height: 2.4rem;
   text-transform: uppercase;
 }
-
 section {
+  @apply md:px-[4rem] md:py-[2.5rem] px-4 py-8;
   box-sizing: border-box;
   height: auto;
-  padding: 2.5rem 4rem;
   font-weight: lighter;
   hr {
     height: 12px;
