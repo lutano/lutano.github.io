@@ -28,8 +28,8 @@ const socialLinks = [
 </script>
 
 <template>
-  <header>
-    <h1 class="anim__from-left">
+  <header class="flex flex-col justify-center">
+    <h1 class="anim__from-left font-bold uppercase">
       <span>
         Designer,<br />
         Developer &amp;<br />
@@ -37,25 +37,33 @@ const socialLinks = [
       </span>
     </h1>
     <div class="anim__from-left">
-      <p>
+      <p class="text-xl">
         Luciano Spilotros is a Sr. Frontend Developer and UX/UI Designer with a
         proven track record of success.
       </p>
-      <p>
+      <p class="text-xl">
         With over 10 years of experience in the online technology domain,
         Luciano specializes in User Research, Experience Design, and Frontend
         Development, consistently delivering intuitive and impactful digital
         solutions.
       </p>
     </div>
-    <div class="actions anim__from-bottom justify-between flex">
+    <div
+      class="anim__from-bottom align-center mt-10 flex flex-wrap items-center justify-between"
+    >
       <a
         href="mailto:&#108;&#117;&#099;&#105;&#097;&#110;&#111;&#046;&#115;&#112;&#105;&#108;&#111;&#116;&#114;&#111;&#115;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;?&#115;&#117;&#098;&#106;&#101;&#099;&#116;=&#072;&#101;&#108;&#108;&#111;,&#032;&#110;&#105;&#099;&#101;&#032;&#116;&#111;&#032;&#109;&#101;&#101;&#116;&#032;&#121;&#111;&#117;!"
-        class="call-to-action button"
+        class="block w-full rounded-[1px] bg-[theme('colors.button')] px-[2.4rem] py-[1.2rem] text-center uppercase text-white transition-transform duration-300 hover:scale-110 hover:bg-[theme('colors.buttonHover')] hover:shadow-2xl hover:shadow-black/20 md:inline-block md:w-auto"
         >hire me!</a
       >
-      <ul class="flex justify-center flex-0 p-0 m-0">
-        <li v-for="link in socialLinks" :key="link.name" class="inline-block">
+      <ul
+        class="flex-0 mx-10 mt-8 flex w-full justify-between p-0 md:m-0 md:w-5/12"
+      >
+        <li
+          v-for="link in socialLinks"
+          :key="link.name"
+          class="mb-0 inline-block"
+        >
           <a
             :class="[link.class, 'social']"
             :href="link.url"
@@ -68,23 +76,7 @@ const socialLinks = [
   </header>
 </template>
 
-<style scoped lang="scss">
-.call-to-action {
-  display: inline-block;
-  padding: 1.8rem 2.4rem;
-
-  background: theme('colors.button');
-  color: rgba(255, 255, 255, 1);
-
-  text-decoration: none;
-  text-transform: uppercase;
-
-  &:hover {
-    background-color: theme('colors.buttonHover');
-    box-shadow: 0 16px 32px -6px rgba(0, 0, 0, 0.2);
-  }
-}
-
+<style scoped>
 .actions {
   display: flex;
   align-items: center;
@@ -96,12 +88,11 @@ const socialLinks = [
 }
 
 .social {
-  margin-left: 1.8rem;
   display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-size: cover;
   opacity: 0.66;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
 
   &:hover {
     opacity: 1;
@@ -109,17 +100,17 @@ const socialLinks = [
 }
 
 .github {
-  background-image: url(/images/social/github.svg);
   -webkit-transform: scale(1.1); /* Chrome, Opera 15+, Safari 3.1+ */
   -ms-transform: scale(1.1); /* IE 9 */
   transform: scale(1.1);
+  background-image: url(/images/social/github.svg);
 }
 
 .behance {
-  background-image: url(/images/social/behance.svg);
   -webkit-transform: scale(1.2); /* Chrome, Opera 15+, Safari 3.1+ */
   -ms-transform: scale(1.2); /* IE 9 */
   transform: scale(1.2);
+  background-image: url(/images/social/behance.svg);
 }
 
 .linkedin {
@@ -127,10 +118,10 @@ const socialLinks = [
 }
 
 .x {
-  background-image: url(/images/social/x-logo.svg);
   -webkit-transform: scale(0.9); /* Chrome, Opera 15+, Safari 3.1+ */
   -ms-transform: scale(0.9); /* IE 9 */
   transform: scale(0.9);
+  background-image: url(/images/social/x-logo.svg);
 }
 
 header {
@@ -151,40 +142,8 @@ header {
 }
 
 h1 span {
-  color: rgba(255, 255, 255, 1);
-  background-color: rgba(74, 74, 74, 1);
   animation: hue 15s infinite;
-}
-
-@keyframes hue {
-  0%,
-  100% {
-    background-color: rgba(74, 74, 74, 0.8);
-  }
-
-  12.5% {
-    background-color: rgba(94, 179, 239, 0.8);
-  }
-
-  25% {
-    background-color: rgba(234, 72, 62, 0.8);
-  }
-
-  37.5% {
-    background-color: rgba(155, 187, 134, 0.8);
-  }
-
-  50% {
-    background-color: rgba(97, 110, 239, 0.7);
-  }
-  62.5% {
-    background-color: rgba(41, 198, 205, 0.8);
-  }
-  75% {
-    background-color: rgba(234, 200, 39, 1);
-  }
-  87.5% {
-    background-color: rgba(158, 190, 205, 1);
-  }
+  background-color: rgba(74, 74, 74, 1);
+  color: rgba(255, 255, 255, 1);
 }
 </style>

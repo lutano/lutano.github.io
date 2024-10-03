@@ -37,15 +37,15 @@ const educationExperience = [
 </script>
 
 <template>
-  <section>
+  <section class="bg-[rgba(158,190,205,0.5)]">
     <hr />
     <h2>Education.</h2>
     <div
       v-for="education in educationExperience"
       :key="education.title"
-      class="education-item item"
+      class="mb-12 border-b border-[rgba(0,0,0,0.2)] pb-12 last:mb-0 last:border-none"
     >
-      <p class="item__subtitle">
+      <p class="my-0">
         {{ education.dates }} |
         <a
           class="animated-link"
@@ -57,29 +57,25 @@ const educationExperience = [
         >
         ( {{ education.location }} )
       </p>
-      <h5 class="item__title">
+      <h5 class="text-lg font-bold">
         {{ education.title }} - <em>{{ education.type }}</em>
       </h5>
-      <p class="item__desc">
+      <p class="my-4 italic">
         {{ education.description }}
       </p>
-      <ul>
-        <li v-for="topic in education.topics" :key="topic">{{ topic }}</li>
+      <ul class="flex flex-wrap">
+        <li v-for="topic in education.topics" :key="topic" class="w-1/2">
+          {{ topic }}
+        </li>
       </ul>
-      <div class="clear"></div>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss">
 section {
-  padding: 4rem 6rem;
-  background-color: rgba(158, 190, 205, 0.5);
-
-  li {
-    float: left;
-    min-width: 28rem;
-    font-size: 1.4rem;
+  ul {
+    list-style: disc;
   }
 }
 </style>

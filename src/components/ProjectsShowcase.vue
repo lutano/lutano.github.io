@@ -58,7 +58,7 @@ const projects = [
     :key="project.title"
     :style="{ backgroundColor: project.backgroundColor }"
   >
-    <p class="item__extra">.0{{ index + 1 }}</p>
+    <p class="mb-0 text-sm text-white">.0{{ index + 1 }}</p>
     <a
       class="item__img-link"
       target="_blank"
@@ -67,18 +67,20 @@ const projects = [
     >
       <img :src="project.image" :alt="project.title + ' project image'" />
     </a>
-    <h6 class="item__subtitle">
+    <h6 class="mb-1 mt-8 text-white">
       {{ project.companyName }} - {{ project.features }}
     </h6>
-    <h4 class="item__title">{{ project.title }}, {{ project.date }}</h4>
+    <h4 class="text-xl font-bold text-white">
+      {{ project.title }}, {{ project.date }}
+    </h4>
   </section>
 </template>
 
 <style scoped lang="scss">
 section {
   img {
-    margin: 1rem auto;
     display: block;
+    margin: 1rem auto;
     width: 100%;
   }
 
@@ -97,17 +99,6 @@ section {
         opacity: 0.15;
       }
     }
-  }
-
-  .item__title,
-  .item__subtitle,
-  .item__extra {
-    color: rgba(255, 255, 255, 1);
-  }
-
-  .item__subtitle {
-    margin-top: 4rem;
-    font-weight: lighter;
   }
 }
 </style>

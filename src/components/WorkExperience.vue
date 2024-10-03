@@ -79,15 +79,15 @@ const workExperience = [
 </script>
 
 <template>
-  <section>
+  <section class="bg-[rgba(234,200,39,1)]">
     <hr />
     <h2>WORK Experience.</h2>
     <div
       v-for="experience in workExperience"
       :key="experience.companyName"
-      class="work-item item"
+      class="mb-12 border-b border-[rgba(0,0,0,0.2)] pb-12 last:mb-0 last:border-none"
     >
-      <p class="item__subtitle">
+      <p class="my-0">
         {{ experience.date }} |
         <a
           :href="experience.companyUrl"
@@ -99,8 +99,8 @@ const workExperience = [
         >
         ({{ experience.place }})
       </p>
-      <h5 class="item__title">{{ experience.title }}</h5>
-      <p class="item__desc">
+      <h5 class="text-lg font-bold">{{ experience.title }}</h5>
+      <p class="mb-4 mt-4 italic">
         {{ experience.description }}
       </p>
       <ul>
@@ -112,17 +112,4 @@ const workExperience = [
   </section>
 </template>
 
-<style scoped lang="scss">
-section {
-  padding: 4rem 6rem;
-  background-color: rgba(234, 200, 39, 1);
-  .item__subtitle {
-    opacity: 0.8;
-    font-size: 1.4rem;
-  }
-  ul {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-}
-</style>
+<style scoped></style>
