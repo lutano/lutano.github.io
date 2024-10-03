@@ -1,0 +1,47 @@
+@media only screen and (max-width: 768px) {
+  .call-to-action {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  section {
+    padding: 6rem 2rem;
+  }
+  header {
+    padding: 1rem 1.6rem;
+    .social {
+      margin: 2.6rem 1rem 2.6rem 2rem;
+    }
+  }
+  .actions {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main {
+    margin-left: 40%;
+    width: 60%;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    width: 40%;
+    height: 100%;
+  }
+  footer {
+    margin-left: 40%;
+    width: 60%;
+  }
+}
+@media print,
+  (-o-min-device-pixel-ratio: 5/4),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+}
