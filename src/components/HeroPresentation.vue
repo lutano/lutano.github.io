@@ -1,6 +1,18 @@
 <script setup lang="ts">
 const socialLinks = [
   {
+    name: 'Github',
+    url: 'https://github.com/lutano/',
+    icon: 'github',
+    class: 'github',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/lspilotros',
+    icon: 'linkedin',
+    class: 'linkedin',
+  },
+  {
     name: 'Behance',
     url: 'https://www.behance.net/lspilotros',
     icon: 'behance',
@@ -11,18 +23,6 @@ const socialLinks = [
     url: 'https://x.com/lspilotros',
     icon: 'x',
     class: 'x',
-  },
-  {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/lspilotros',
-    icon: 'linkedin',
-    class: 'linkedin',
-  },
-  {
-    name: 'Github',
-    url: 'https://github.com/lutano/',
-    icon: 'github',
-    class: 'github',
   },
 ]
 </script>
@@ -94,22 +94,25 @@ const socialLinks = [
 
 .github {
   position: relative;
-  top: 2px;
+  /* top: 2px; */
   scale: 1.2;
   background-image: url(/images/social/github.svg);
 }
 
 .behance {
-  scale: 1.3;
+  position: relative;
+  top: 1px;
+  scale: 1.35;
   background-image: url(/images/social/behance.svg);
 }
 
 .linkedin {
-  scale: 1.15;
+  scale: 1.05;
   background-image: url(/images/social/linkedin.svg);
 }
 
 .x {
+  scale: 0.95;
   background-image: url(/images/social/x-logo.svg);
 }
 
