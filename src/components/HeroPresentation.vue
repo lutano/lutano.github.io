@@ -123,14 +123,15 @@ header {
   font-size: 1.125em;
   text-align: left;
 }
+
 .anim__from-left {
-  -webkit-animation: from-the-left 1100ms linear both;
-  animation: from-the-left 1100ms linear both;
+  -webkit-animation: from-the-left 1.2ms linear both;
+  animation: from-the-left 1.2s linear both;
 }
 
 .anim__from-bottom {
-  -webkit-animation: from-the-bottom 2000ms linear both;
-  animation: from-the-bottom 2000ms linear both;
+  -webkit-animation: from-the-bottom 2.2s ease-out both;
+  animation: from-the-bottom 2.2s ease-out both;
 }
 
 span {
